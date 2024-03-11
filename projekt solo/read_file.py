@@ -5,6 +5,16 @@ with open(file_path) as file:
 
 column_labels = [f'atr{i+1}' if i < len(data[0])-1 else 'atr decyzyjny' for i in range(len(data[0]))]
 
+unique_values = {}
+for row in data:
+    for i in range(len(row)):
+        if not row[i].isdigit():
+            if i not in unique_values:
+                unique_values[i] = {}
+            if row[i] not in unique_values[i]:
+                unique_values[i][row[i]] = len(unique_values[i])
+            row[i] = unique_values[i][row[i]]
+
 if __name__ == "__main__":
     print("Wybierz jedną z poniższych opcji:")
     print("1. Wyświetl tabelę z danymi.")

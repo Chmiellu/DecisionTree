@@ -59,7 +59,7 @@ def print_results(entropy, attribute_entropies):
         print(f"Gain({attribute},T) = {gain}")
         print(f"GainRatio({attribute},T) = {gain_ratio}")
 
-# Przykładowe użycie funkcji
+
 entropy = calculate_entropy(data)
 attribute_entropies = conditional_attribute_entropy(data)
 print_results(entropy, attribute_entropies)
