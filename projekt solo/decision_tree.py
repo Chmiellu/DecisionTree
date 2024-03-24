@@ -63,6 +63,7 @@ def display_tree(node, level=0):
 
 # Wybierz najlepszy atrybut
 best_attribute_index = choose_best_attribute(data)
+print(best_attribute_index)
 # Utwórz początkowe węzły
 nodes = create_nodes_for_attribute(data, best_attribute_index)
 # Utwórz drzewo
